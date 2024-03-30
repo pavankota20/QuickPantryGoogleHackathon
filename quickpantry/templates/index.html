@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="static/css/style_page.css">
+    </head>
+    <body class="bg-gray-100" id="body">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center border-b-2 border-gray-200 py-6">
+                <div class="text-3xl font-bold text-green-600">
+                    QUICKPANTRY
+                </div>
+                <div class="relative dropdown" style="width: 60%">
+                    <div class="flex items-center bg-white rounded-full px-4 py-2" style="margin-left: 20%; width: 50%">
+                        <input class="outline-none text-sm flex-1" id="search-input" type="text" placeholder="What are you looking for?"/>
+                        <button class="text-white bg-green-500 rounded-full px-4 py-2 ml-2 focus:outline-none" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div id="autocomplete-list" class="autocomplete-items dropdown-menu absolute right-0 w-56 mt-1 bg-white shadow-lg rounded-md z-10" style="margin-right: 30%;width: 50%;">
+                        
+                    </div>
+                </div>
+                
+                <button class="text-white bg-green-500 rounded-full px-4 py-2 ml-2 focus:outline-none" style="margin-left: 20%">
+                     <i class="fas fa-shopping-cart"></i> 
+                </button>
+                <a href="/logout">
+                    <button class="text-white bg-red-500 rounded-full px-4 py-2 ml-2 focus:outline-none" onclick="logoutUser()">
+                        <i class="fas fa-sign-out-alt"></i> 
+                    </button>
+                </a>
+            </div>
+
+            <div id="userId" data-user-id="{{ logged_in_user }}" style="display: none;"></div>
+            <div class="text-xl font-semibold" id="results-section">
+            </div>
+            <div class="py-8">
+                <div id="results-container">
+                    
+                </div>
+            </div>
+            
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="static/js/script.js"></script>
+        </div>
+    </body>
+</html>
